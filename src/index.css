@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sora: "Sora", sans-serif;
+  --font-code: "Source Code Pro", monospace;
+  --font-grotesk: "Space Grotesk", sans-serif;
+  color-scheme: dark;
+  --breathe-start: #ffc876;
+  --breathe-middle-1: #79fff7;
+  --breathe-middle-2: #9f53ff;
+  --breathe-end: #ff98e2;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply bg-n-8 font-sans text-base text-n-1;
+  }
+}
+
+.rotate-45 {
+  @apply rotate-[45deg];
+}
+
+.rotate-90 {
+  @apply rotate-[90deg];
+}
+
+.rotate-135 {
+  @apply rotate-[135deg];
+}
+
+.rotate-180 {
+  @apply rotate-[180deg];
+}
+
+.rotate-225 {
+  @apply rotate-[225deg];
+}
+
+.rotate-270 {
+  @apply rotate-[270deg];
+}
+
+.rotate-315 {
+  @apply rotate-[315deg];
+}
+
+.rotate-360 {
+  @apply rotate-[360deg];
+}
+
+.-rotate-45 {
+  @apply rotate-[-45deg];
+}
+
+.-rotate-90 {
+  @apply rotate-[-90deg];
+}
+
+.-rotate-135 {
+  @apply rotate-[-135deg];
+}
+
+.-rotate-180 {
+  @apply rotate-[-180deg];
+}
+
+.-rotate-225 {
+  @apply rotate-[-225deg];
+}
+
+.-rotate-270 {
+  @apply rotate-[-270deg];
+}
+
+.-rotate-315 {
+  @apply rotate-[-315deg];
+}
+
+.-rotate-360 {
+  @apply rotate-[-360deg];
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.spin-conic-gradient {
+  background: conic-gradient(
+    from var(--angle),
+    #ffc876,
+    #79fff7,
+    #9f53ff,
+    #ff98e2,
+    #ffc876
+  );
+  animation: spin-conic-gradient 3s linear infinite;
+}
+
+@keyframes spin-conic-gradient {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+@keyframes breathe {
+  0% {
+    stroke: var(--breathe-start);
+    fill: var(--breathe-start);
+    color: var(--breathe-start);
+  }
+  33% {
+    stroke: var(--breathe-middle-1);
+    fill: var(--breathe-middle-1);
+    color: var(--breathe-middle-1);
+  }
+  66% {
+    stroke: var(--breathe-middle-2);
+    fill: var(--breathe-middle-2);
+    color: var(--breathe-middle-2);
+  }
+  100% {
+    stroke: var(--breathe-end);
+    fill: var(--breathe-end);
+    color: var(--breathe-end);
+  }
+}
+
+/* Hidden div to apply and track the color */
+.hidden-breathe {
+  display: inline;
+  position: absolute;
+  visibility: hidden;
+  animation: breathe 4s infinite;
+}
