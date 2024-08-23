@@ -14,9 +14,6 @@ Check out the live demo: [Brainwave Demo](https://brainwave-demo.netlify.app/)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Features
 
